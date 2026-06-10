@@ -104,7 +104,7 @@ TYPES=""
 if [ -n "$REPO_ROOT" ] && [ -f "$REPO_ROOT/.claude/hooks/_lib-read-config.sh" ]; then
   # shellcheck disable=SC1090,SC1091
   . "$REPO_ROOT/.claude/hooks/_lib-read-config.sh"
-  TYPES=$(config_get '.commit.type_whitelist[]' 2>/dev/null | paste -sd'|' -)
+  TYPES=$(config_get '.commit.type_whitelist[]' 2>/dev/null | tr -d '\r' | paste -sd'|' -)
 fi
 
 # 2. Legacy compat: flat `commit_types` key at the top level of project-config.json.

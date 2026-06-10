@@ -43,6 +43,12 @@ workspace/*/
 # These are per-machine artefacts; never committed.
 .claude/skills/*.framework.bak/
 
+# Split-portfolio v2 (framework ≥ #242): registry, per-project docs, onboarding,
+# and workspace all live in the private sibling repo.
+apexyard.projects.yaml
+projects/
+workspace/
+
 # Symlinks at .claude/skills/<name>/ created by link-custom-skills.sh
 # pointing into the private sibling repo's custom-skills/ are NOT covered
 # by a globbed gitignore (we can't predict adopter skill names without
